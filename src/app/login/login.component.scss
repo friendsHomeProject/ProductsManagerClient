@@ -1,0 +1,14 @@
+@import '../../settings.styles.scss';
+
+.login-header {
+    margin: 0;
+    padding-top: 130px;
+    padding-bottom: 50px;
+    span{
+        border-bottom: 2px $color-gray solid;
+    }
+}
+
+.center-page{
+    text-align: center;
+}

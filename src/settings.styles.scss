@@ -1,0 +1,11 @@
+$font-family: 'Arial';
+$color-purple: #210049;
+$color-gray: #eaeaea;
+$color-red : #f73947;
+
+.border-invalid {
+    border-left: 1px solid $color-red;
+    border-right: 5px solid $color-red;
+    border-top: 1px solid $color-red;
+    border-bottom: 1px solid $color-red;
+}
