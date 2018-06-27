@@ -3,7 +3,6 @@ import {
     Routes,
     RouterModule
 } from '@angular/router';
-import { LoginComponent } from './login-module/login.component';
 
 import { LoginComponent } from './login/login.component';
 
