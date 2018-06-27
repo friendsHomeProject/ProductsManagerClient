@@ -5,6 +5,7 @@ import {
 } from '@angular/router';
 import { LoginComponent } from './login-module/login.component';
 
+import { LoginComponent } from './login/login.component';
 
 export const routes: Routes = [
     {
