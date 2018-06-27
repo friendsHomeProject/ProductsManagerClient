@@ -1,0 +1,48 @@
+
+.form-input {
+
+    margin-bottom: 15px;
+
+    .form-control{     
+        text-overflow: ellipsis;
+    }
+
+    .form-input-label{
+        +ng-component .popover{
+            margin-top: 3px;
+            &.left{
+                margin-left: 10px;
+            }
+            &.right{
+                margin-left: -10px;
+            }
+            
+        }
+    }
+
+    .form-control-feedback {
+        pointer-events: auto;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .input-info{
+        display: block;
+    }
+
+    :not([disabled])[readonly] {
+        background-color: white;
+    }
+
+    .with-password-strength {
+        text-overflow: clip;
+        &[dir="ltr"]{
+            padding-right: 50px;
+        }
+        &[dir="rtl"] {
+            padding-left: 50px;
+        }
+    }
+}

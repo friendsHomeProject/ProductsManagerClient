@@ -1,0 +1,56 @@
+<div class="form-input form-group"> 
+
+    <label [attr.for]="'txt' + id" [id]="'lbl' + id" 
+            class="control-label form-input-label" 
+            *ngIf="label" 
+            rcConfirm
+            confirmType="error" 
+            [messages]="failures | async" 
+            [placement]="tooltipPlacement" 
+            [isOpen]="(invalid | async) && displayError && displayTooltipOnLabel">
+         {{ label | translate}}
+    </label>
+    
+    <div class="form-input-container">
+        <div>
+            <input [id]="'txt' + id"
+                #input
+                [type]="inputType"
+                [dir]="direction | translate"
+                [rcTitle]="displayTitle(input)? value: null"
+                [defaultTitle]="defaultTitle"
+                [autofocus]="autofocus"
+                [attr.autocomplete]="autoCompleteState"
+                [ngModel]="value"
+                (ngModelChange)="setInputDirty($event)"
+                [maxlength]="maxLength"
+                class="form-control"
+                (focus)="onFocusIn($event)"
+                (blur)="onFocusOut()"
+                (mouseleave)="onMouseLeave($event)" 
+                (mouseenter)="onMouseEnter($event)"
+                [ngClass]="{ 'rc-invalid' : (invalid | async) && hasError, 'with-password-strength': displayPasswordStrength}"
+                [disabled]="disabled || readonly"
+                [placeholder]="placeholder | translate" 
+                rcConfirm
+                confirmType="error" 
+                [messages]="failures | async" 
+                [placement]="tooltipPlacement" 
+                [isOpen]="(invalid | async) && displayError && !displayTooltipOnLabel"
+                (keyup)="onKeyUp()"/>
+            <rc-password-strength *ngIf="displayPasswordStrength"
+                [model]="value" [direction]="input.dir">
+            </rc-password-strength>
+        </div>
+          <span *ngIf="popoverMessage != null" 
+            class="input-info" 
+            [id]="'Confirm' + id"
+            rcConfirm
+            [confirmType]="popoverType"
+            [message]="popoverMessage"
+            [placement]="tooltipPlacement"
+            [isOpen]="isInFocus"
+            #popover>
+        </span>
+    </div>
+ </div>
